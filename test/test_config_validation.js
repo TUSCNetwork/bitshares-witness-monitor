@@ -2,14 +2,14 @@ var assert = require('assert');
 var validate_config = require('../lib/ValidateConfig.js')
 
 const valid_config = {
-    "witness_id": "1.6.123",
-    "api_node": "wss://bitshares.org",
+    "witness_id": "1.5.93",
+    "api_node": "wss://api.tusc.network",
     "private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "missed_block_threshold": 3,
     "checking_interval": 10,
     "reset_period": 300,
     "witness_signing_keys": [ 
-        "BTSXXXXXXXXXXXXXXXXXXXXXXX", 
+        "TUSCXXXXXXXXXXXXXXXXXXXXXXX", 
         "TESTXXXXXXXXXXXXXXXXXXXXXX"
     ],
     "recap_time": 60,
@@ -68,19 +68,19 @@ describe('#validate_config()', function() {
 
     it('should detect not enough signing keys (as array)', function() {
         var config = Object.assign({}, valid_config);
-        config.witness_signing_keys = ['BTSXXXXXXXXXX'];
+        config.witness_signing_keys = ['TUSCXXXXXXXXXX'];
         assert('witness_signing_keys' in validate_config(config));
     });
 
     it('should detect not enough signing keys (as string)', function() {
         var config = Object.assign({}, valid_config);
-        config.witness_signing_keys = 'BTSXXXXXXXXXX';
+        config.witness_signing_keys = 'TUSCXXXXXXXXXX';
         assert('witness_signing_keys' in validate_config(config));
     });
 
     it('should detect bad signing keys', function() {
         var config = Object.assign({}, valid_config);
-        config.witness_signing_keys = [ 'BTSXXXXXXXXXX', 'BTCXXXXXXXX'];
+        config.witness_signing_keys = [ 'TUSCXXXXXXXXXX', 'BTCXXXXXXXX'];
         assert('witness_signing_keys' in validate_config(config));
     });
 
