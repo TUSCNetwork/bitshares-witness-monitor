@@ -87,7 +87,7 @@ bot.onText(/\/help/, (msg) => {
     const help = [
         `\`/stats\`: Return the current configuration and statistics of the monitoring session.`,
         `\`/switch\`: IMMEDIATELY update your signing key to the next available signing key.`,
-        `\`/signing_keys <BTS_public_signing_key1> <BTS_public_signing_key2>\`: Set a new list of public keys.`,
+        `\`/signing_keys <TUSC_public_signing_key1> <TUSC_public_signing_key2>\`: Set a new list of public keys.`,
         `\`/new_node wss://<api_node_url>\`: Set a new API node to connect to.`,
         `\`/threshold X\`: Set the missed block threshold before updating signing key to X blocks.`,
         `\`/interval Y\`: Set the checking interval to every Y seconds.`,
