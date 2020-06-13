@@ -1,14 +1,12 @@
-# BitShares Witness Monitor
+# TUSC Witness Monitor
 
-This is a BitShares witness monitoring script with telegram integration.
-
-It has been tested with node v.8 LTS.
+This is a TUSC witness monitoring script with telegram integration.
 
 To use, clone the repo (or download the zip).
 
 ```
-git clone https://github.com/clockworkgr/bitshares-witness-monitor
-cd bitshares-witness-monitor
+git clone https://github.com/tuscnetwork/tusc-witness-monitor
+cd tusc-witness-monitor
 npm install
 ```
 
@@ -18,13 +16,13 @@ Open config-sample.json in your favourite text editor and edit with your own set
 
 ```
 {
-    "witness_id": "1.6.XXX",
+    "witness_id": "1.5.XXX",
     "api_node": "wss://<your_preferred_api_node>",
     "private_key": "5kTSOMEPRIVATEKEY111111111111",
     "missed_block_threshold": 3,
     "checking_interval": 10,
     "reset_period": 300,
-    "witness_signing_keys": [ "BTSXXXXXXXXXXXXXXXXXX", "BTSYYYYYYYYYYYYYYY"],
+    "witness_signing_keys": [ "TUSCXXXXXXXXXXXXXXXXXX", "TUSCYYYYYYYYYYYYYYY"],
     "recap_time": 60,
     "debug_level": 3,
     "telegram_token": "<telegram_access_token>",
@@ -44,7 +42,7 @@ and then save as config.json
 | Key | Description |
 | --- | --- |
 | `witness_id` | The id of the witness to monitor. |
-| `api_node` | Bitshares Websocket url to use to retrieve blockchain information. |
+| `api_node` | TUSC Websocket url to use to retrieve blockchain information. |
 | `private_key`  | The active key of your normal witness-owning account used to sign the witness_update operation. |
 | `missed_block_threshold`  | How many blocks must be missed within a `reset_period` sec window before the script switches your signing key. Recommend to set at 2 or higher since 1 will possibly trigger updates on maintenance intervals (see [bitshares-core#504](https://github.com/bitshares/bitshares-core/issues/504)). |
 | `checking_interval` | How often should the script check for new missed blocks in seconds. |
