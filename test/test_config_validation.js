@@ -3,7 +3,7 @@ var validate_config = require('../lib/ValidateConfig.js')
 
 const valid_config = {
     "witness_id": "1.5.93",
-    "api_node": "wss://bitshares.org",
+    "api_node": "wss://api.tusc.network",
     "private_key": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "missed_block_threshold": 3,
     "checking_interval": 10,
